@@ -19,6 +19,8 @@
 					die ('Tietokantaan yhdistäminen epäonnistui!');
 				}
 				else {
+					$user = mysql_real_escape_string($user);
+					$pass = mysql_real_escape_string($pass);
 					$db = mysql_select_db('ylläpito' , $connect);
 					if (!$db) {
 						die ('Tietokannan valitseminen epäonnistui!');
