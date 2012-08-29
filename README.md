@@ -1,4 +1,8 @@
 onnenmyyra
 ==========
 
-päiväkoti onnenmyyrä
+Homepage of kindergarten Onnenmyyrä.
+
+
+
+
