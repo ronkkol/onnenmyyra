@@ -1,6 +1,14 @@
 <?php
 
-$connect = mysql_connect('localhost' , 'root' , 'leevi637e');
+session_start();
+if (!isset($_SESSION["user"])) {
+
+	echo ('Kirjaudu sisään ennen tämän sivun katselemista!');
+	header("Location: login.php");
+
+}
+
+$connect = mysql_connect('localhost' , 'käyttäjä' , 'salasana');
 
 if (!$connect) {
 
@@ -11,8 +19,8 @@ else {
 
 	if ($_POST["title"] && $_POST["kirje"]) {
 		
-		$title = $_POST["title"];
-		$kirje = $_POST["kirje"];
+		$title = mysql_real_escape_string($_POST["title"]);
+		$kirje = mysql_real_escape_string($_POST["kirje"]);
 		
 		echo ("$title <br><br>");
 		echo ("$kirje <br><br>");

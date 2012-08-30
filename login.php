@@ -14,7 +14,7 @@
 			$user = $_POST["user"];
 			$pass = md5($_POST["pass"]);
 			if ($user && $pass) {
-				$connect = mysql_connect('localhost' , 'root' , 'leevi637e');
+				$connect = mysql_connect('localhost' , 'käyttäjä' , 'salasana');
 				if(!$connect) {
 					die ('Tietokantaan yhdistäminen epäonnistui!');
 				}

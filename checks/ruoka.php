@@ -1,6 +1,14 @@
 <?php
 
-$connect = mysql_connect('localhost' , 'root' , 'leevi637e');
+session_start();
+if (!isset($_SESSION["user"])) {
+
+	echo ('Kirjaudu sisään ennen tämän sivun katselemista!');
+	header("Location: login.php");
+
+}
+
+$connect = mysql_connect('localhost' , 'käyttäjä' , 'salasana');
 
 if (!$connect) {
 
@@ -11,8 +19,8 @@ else {
 
 	if ($_POST["date"] && $_POST["lista"]) {
 		
-		$date = $_POST["date"];
-		$lista = $_POST["lista"];
+		$date = mysql_real_escape_string($_POST["date"]);
+		$lista = mysql_real_escape_string($_POST["lista"]);
 		
 		echo ("$date <br><br>");
 		echo ("$lista <br><br>");

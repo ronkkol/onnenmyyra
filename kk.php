@@ -10,7 +10,7 @@
 					<h1><br><br><br>Kuukausikirje<br><br><br>
 					<div id='kk'>
 					<?php
-					$connect = mysql_connect('localhost' , 'root' , 'leevi637e');
+					$connect = mysql_connect('localhost' , 'käyttäja' , 'salasana');
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
 							}
@@ -58,7 +58,7 @@
 									echo ("Jokin meni vikaan tietokannan löytämisessä!");
 								}
 								else {
-									$date = $_POST["date"];
+									$date = mysql_real_escape_string($_POST["date"]);
 									$query = mysql_query("SELECT * FROM content WHERE date='$date'");
 									if (!$query) {
 										echo (mysql_error());
