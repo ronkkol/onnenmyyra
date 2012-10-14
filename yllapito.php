@@ -30,20 +30,6 @@ if (!isset($_SESSION["user"])) {
 					
 				</form><br><br><a href='logout.php'>Kirjaudu ulos</a><br><br>
 				
-				<h1>Ruokalistan päivitys:</h1>
-				<br>
-				<br>
-				
-				<form method='POST' action='checks/ruoka.php' align='center' style='max-width: 500px;' id='ruoka'>
-				
-					<label>Päiväys: <input type='text' class='datepick' style='font-size: 120%;' id='two' name='date' /></label><br><br><br>
-					
-					<label>Ruokalista: <textarea id='sisältö' name='lista'></textarea></label><br><br><br>
-					
-					<input type='submit' value='Päivitä' class='nappi' />                                           <input type='reset' value='Tyhjennä' class='nappi' />
-					
-				</form><br><br><a href='logout.php'>Kirjaudu ulos</a><br><br>
-				
 				<h1>Kuukausikirjeen päivitys:</h1>
 				<br>
 				<br>

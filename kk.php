@@ -48,7 +48,7 @@
 						if (isset($_POST["submit"])) {
 						$submit = $_POST["submit"];
 						if ($_POST["date"]) {
-							$connect = mysql_connect('localhost' , 'root' , 'leevi637e');
+							$connect = mysql_connect('localhost' , 'root' , 'salasana');
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
 							}
