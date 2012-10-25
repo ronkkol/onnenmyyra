@@ -14,6 +14,7 @@
 			$user = $_POST["user"];
 			$pass = md5($_POST["pass"]);
 			if ($user && $pass) {
+				include('includes/config.php');
 				$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
 				if(!$connect) {
 					die ('Tietokantaan yhdistäminen epäonnistui!');

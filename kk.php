@@ -10,6 +10,7 @@
 					<h1><br><br><br>Kuukausikirje<br><br><br>
 					<div id='kk'>
 					<?php
+					include('includes/config.php');
 					$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
@@ -48,6 +49,7 @@
 						if (isset($_POST["submit"])) {
 						$submit = $_POST["submit"];
 						if ($_POST["date"]) {
+							include('includes/config.php');
 							$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
