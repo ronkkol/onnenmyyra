@@ -11,8 +11,8 @@
 					<h2 align='center'>
 					<ol style='display: inline-block; text-align: left;'>
 					<li>Lataa hakemus alta valitsemassa muodossa</li>
-					<li>Tulosta ja t‰yt‰ hakemus</li>
-					<li><a href='yhteys.php'>Ota yhteytt‰</a> ja toimita hakemus meille</li>
+					<li>Tulosta ja t√§yt√§ hakemus</li>
+					<li><a href='yhteys.php'>Ota yhteytt√§</a> ja toimita hakemus meille</li>
 					</ol>
 					<br><br><br>
 					Lataukset: <a href='lataukset/pdf.php'>PDF-tiedosto</a> | <a href='lataukset/word.docx'>Word dokumentti</a></h2>

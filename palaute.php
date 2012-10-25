@@ -14,14 +14,14 @@
 							<input type="text" name="name" class='field' /><br><br>
 						</label>
 						<label>
-						Sähköpostisi:
+						SÃ¤hkÃ¶postisi:
 							<input type="text" name="email" class='field' /><br><br>
 						</label>
 						<label>
 						Viesti:<br>
 							<textarea name="message"></textarea><br><br>
 						</label>
-						<input type="submit" value="Lähetä" class='nappi'>
+						<input type="submit" value="LÃ¤hetÃ¤" class='nappi'>
 					</form>
 					<br><br>
 				</div>
@@ -30,9 +30,9 @@
 		<script language="JavaScript">
 			var frmvalidator  = new Validator("palaute");
 			frmvalidator.addValidation("name","req","Anna meille nimesi");
-			frmvalidator.addValidation("email","req","Anna sähköpostiosoitteesi");
+			frmvalidator.addValidation("email","req","Anna sÃ¤hkÃ¶postiosoitteesi");
 			frmvalidator.addValidation("email","email",
-			"Anna oikea sähköpostoosoite");
+			"Anna oikea sÃ¤hkÃ¶postoosoite");
 		</script>
 	</BODY>
 </HTML>
