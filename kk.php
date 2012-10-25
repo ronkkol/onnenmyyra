@@ -10,12 +10,12 @@
 					<h1><br><br><br>Kuukausikirje<br><br><br>
 					<div id='kk'>
 					<?php
-					$connect = mysql_connect('localhost' , 'käyttäja' , 'salasana');
+					$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
 							}
 							else {
-								$db_selected = mysql_select_db('kk' , $connect);
+								$db_selected = mysql_select_db("$config['kk-db']" , $connect);
 								if (!$db_selected) {
 									echo ("Jokin meni vikaan tietokannan löytämisessä!");
 								}
@@ -48,12 +48,12 @@
 						if (isset($_POST["submit"])) {
 						$submit = $_POST["submit"];
 						if ($_POST["date"]) {
-							$connect = mysql_connect('localhost' , 'root' , 'salasana');
+							$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
 							}
 							else {
-								$db_selected = mysql_select_db('ohjelma' , $connect);
+								$db_selected = mysql_select_db("$config['ohjelma-db']" , $connect);
 								if (!$db_selected) {
 									echo ("Jokin meni vikaan tietokannan löytämisessä!");
 								}
