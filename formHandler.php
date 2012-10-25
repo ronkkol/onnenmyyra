@@ -5,7 +5,7 @@ if(empty($_POST['name'])  ||
    empty($_POST['email']) ||
    empty($_POST['message']))
 {
-    $errors .= "\n Error: T‰yt‰ kaikki kent‰t";
+    $errors .= "\n Error: T√§yt√§ kaikki kent√§t";
 }
 $name = $_POST['name'];
 $email_address = $_POST['email'];
@@ -14,7 +14,7 @@ if (!preg_match(
 "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",
 $email_address))
 {
-    $errors .= "\n Error: V‰‰r‰ s‰hkˆposti";
+    $errors .= "\n Error: V√§√§r√§ s√§hk√∂posti";
 }
 
 if( empty($errors))

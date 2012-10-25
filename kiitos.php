@@ -8,7 +8,7 @@
 				<?php include('includes/sidebar.php'); ?>
 				<div id='content' align='center' class='height'>
 					<br><br><br><h1>
-					Viestisi on lähetetty! Kiitos palautteesta!
+					Viestisi on lÃ¤hetetty! Kiitos palautteesta!
 					</h1>
 				</div>
 			</div><!-- end of cwrap. -->

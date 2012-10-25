@@ -5,7 +5,7 @@
 	<?php include('includes/head.php'); ?>
 	<BODY>
 		<form method='POST' action='login.php'>
-			<label>K‰ytt‰j‰nimi: <input type='text' name='user' /></label><br>
+			<label>K√§ytt√§j√§nimi: <input type='text' name='user' /></label><br>
 			<label>Salasana: <input type='password' name='pass' /></label><br>
 			<input type='submit' value='Kirjaudu' name='submit' />
 		</form>
@@ -14,19 +14,19 @@
 			$user = $_POST["user"];
 			$pass = md5($_POST["pass"]);
 			if ($user && $pass) {
-				$connect = mysql_connect('localhost' , 'k‰ytt‰j‰' , 'salasana');
+				$connect = mysql_connect('localhost' , 'k√§ytt√§j√§' , 'salasana');
 				if(!$connect) {
-					die ('Tietokantaan yhdist‰minen ep‰onnistui!');
+					die ('Tietokantaan yhdist√§minen ep√§onnistui!');
 				}
 				else {
 					$user = mysql_real_escape_string($user);
 					$pass = mysql_real_escape_string($pass);
-					$db = mysql_select_db('yll‰pito' , $connect);
+					$db = mysql_select_db('yll√§pito' , $connect);
 					if (!$db) {
-						die ('Tietokannan valitseminen ep‰onnistui!');
+						die ('Tietokannan valitseminen ep√§onnistui!');
 					}
 					else {
-						$query = mysql_query("SELECT * FROM k‰ytt‰j‰t WHERE k‰ytt‰j‰='$user' AND salasana='$pass'");
+						$query = mysql_query("SELECT * FROM k√§ytt√§j√§t WHERE k√§ytt√§j√§='$user' AND salasana='$pass'");
 						if ($query) {
 							mysql_fetch_array($query);
 							$numrows = mysql_num_rows($query);
@@ -34,13 +34,13 @@
 								$_SESSION["user"] = 1;
 								header('Location: yllapito.php');
 							}
-							else echo ('V‰‰r‰ k‰ytt‰j‰nimi tai salasana!');
+							else echo ('V√§√§r√§ k√§ytt√§j√§nimi tai salasana!');
 						}
 						else die ('??');
 					}
 				}
 			}
-			else echo ('T‰yt‰ molemmat kent‰t!');
+			else echo ('T√§yt√§ molemmat kent√§t!');
 		}
 		?>
 	</BODY>
