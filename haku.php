@@ -15,7 +15,7 @@
 					<li><a href='yhteys.php'>Ota yhteyttä</a> ja toimita hakemus meille</li>
 					</ol>
 					<br><br><br>
-					Lataukset: <a href='Lataukset/pdf.php'>PDF-tiedosto</a> | <a href='Lataukset/word.docx'>Word dokumentti</a></h2>
+					Lataukset: <a href='lataukset/pdf.php'>PDF-tiedosto</a> | <a href='lataukset/word.docx'>Word dokumentti</a></h2>
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 				</div><!-- end of content. -->
 			</div><!-- end of cwrap. -->

@@ -1,5 +1,5 @@
 <?php
-$file = 'Hakemus.pdf';
+$file = 'hakemus.pdf';
 
 if (file_exists($file)) {
     header('Content-Description: File Transfer');
