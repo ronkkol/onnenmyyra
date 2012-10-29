@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+session_start();
+session_regenerate_id(true);
+ ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -32,6 +35,7 @@
 							$numrows = mysql_num_rows($query);
 							if ($numrows > 0) {
 								$_SESSION["user"] = 1;
+								
 								header('Location: yllapito.php');
 							}
 							else echo ('Väärä käyttäjänimi tai salasana!');
