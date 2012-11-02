@@ -17,19 +17,20 @@ session_regenerate_id(true);
 			$user = $_POST["user"];
 			$pass = md5($_POST["pass"]);
 			if ($user && $pass) {
-				$connect = mysql_connect('localhost' , 'käyttäjä' , 'salasana');
+				include('includes/config.php');
+				$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
 				if(!$connect) {
 					die ('Tietokantaan yhdistäminen epäonnistui!');
 				}
 				else {
 					$user = mysql_real_escape_string($user);
 					$pass = mysql_real_escape_string($pass);
-					$db = mysql_select_db('ylläpito' , $connect);
+					$db = mysql_select_db("$config['admin-db']" , $connect);
 					if (!$db) {
 						die ('Tietokannan valitseminen epäonnistui!');
 					}
 					else {
-						$query = mysql_query("SELECT * FROM käyttäjät WHERE käyttäjä='$user' AND salasana='$pass'");
+						$query = mysql_query("SELECT * FROM kayttajat WHERE kayttaja='$user' AND salasana='$pass'");
 						if ($query) {
 							mysql_fetch_array($query);
 							$numrows = mysql_num_rows($query);
