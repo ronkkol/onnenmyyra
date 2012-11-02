@@ -13,12 +13,12 @@
 					include('includes/config.php');
 					$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
 							if (!$connect) {
-								echo ('Jokin meni vikaan tietokantaan yhdist‰misess‰!');
+								echo ('Jokin meni vikaan tietokantaan yhdist√§misess√§!');
 							}
 							else {
 								$db_selected = mysql_select_db("$config['kk-db']" , $connect);
 								if (!$db_selected) {
-									echo ("Jokin meni vikaan tietokannan lˆyt‰misess‰!");
+									echo ("Jokin meni vikaan tietokannan l√∂yt√§misess√§!");
 								}
 								else {
 									$query = mysql_query("Select * FROM content order by id DESC limit 1");
@@ -27,7 +27,7 @@
 									}
 									else {
 										if (mysql_num_rows($query) < 1) {
-											echo ('Ei tietoja t‰lle kuulle!');
+											echo ('Ei tietoja t√§lle kuulle!');
 										}
 										else {
 											$row = mysql_fetch_array($query);
@@ -40,7 +40,7 @@
 						?>
 						</h1>
 						<form action='kk.php' method='POST'>
-						<label>P‰iv‰ys: <input type='text' id='one' style='font-size: 120%;' class='datepick'  name='date' /></label>
+						<label>P√§iv√§ys: <input type='text' id='one' style='font-size: 120%;' class='datepick'  name='date' /></label>
 						<input type='submit' value='Etsi' class='nappi' name='submit' />
 					</form>
 					<br><br>
@@ -52,12 +52,12 @@
 							include('includes/config.php');
 							$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
 							if (!$connect) {
-								echo ('Jokin meni vikaan tietokantaan yhdist‰misess‰!');
+								echo ('Jokin meni vikaan tietokantaan yhdist√§misess√§!');
 							}
 							else {
 								$db_selected = mysql_select_db("$config['ohjelma-db']" , $connect);
 								if (!$db_selected) {
-									echo ("Jokin meni vikaan tietokannan lˆyt‰misess‰!");
+									echo ("Jokin meni vikaan tietokannan l√∂yt√§misess√§!");
 								}
 								else {
 									$date = mysql_real_escape_string($_POST["date"]);
@@ -67,7 +67,7 @@
 									}
 									else {
 										if (mysql_num_rows($query) < 1) {
-											echo ('Ei tietoja t‰lle p‰iv‰lle!');
+											echo ('Ei tietoja t√§lle p√§iv√§lle!');
 										}
 										else {
 											$row = mysql_fetch_array($query);
@@ -78,7 +78,7 @@
 								}
 							}
 						}
-						else echo ("Ilmoita p‰iv‰ys!");
+						else echo ("Ilmoita p√§iv√§ys!");
 						}
 						?>
 					</div>

@@ -1,11 +1,10 @@
 <?php
 $errors = '';
-$myemail = 'paivakotionnenmyyra@gmail.com';//<-----Put Your email address here.
 if(empty($_POST['name'])  ||
    empty($_POST['email']) ||
    empty($_POST['message']))
 {
-    $errors .= "\n Error: Täytä kaikki kentät";
+    $errors .= "\n Error: TÃ¤ytÃ¤ kaikki kentÃ¤t";
 }
 $name = $_POST['name'];
 $email_address = $_POST['email'];
@@ -14,21 +13,29 @@ if (!preg_match(
 "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",
 $email_address))
 {
-    $errors .= "\n Error: Väärä sähköposti";
+    $errors .= "\n Error: VÃ¤Ã¤rÃ¤ sÃ¤hkÃ¶posti";
 }
 
 if( empty($errors))
 {
-$to = $myemail;
-$email_subject = "Contact form submission: $name";
-$email_body = "You have received a new message. ".
-" Here are the details:\n Name: $name \n ".
-"Email: $email_address\n Message \n $message";
-$headers = "From: $myemail\n";
-$headers .= "Reply-To: $email_address";
-mail($to,$email_subject,$email_body,$headers);
-//redirect to the 'thank you' page
-header('Location: kiitos.php');
+require_once 'lib/swift_required.php';
+
+
+$transport = Swift_SmtpTransport::newInstance('ssmtp-serveri', smtp-portti)
+  ->setUsername('kayttajanimi')
+  ->setPassword('salasana')
+  ;
+
+$maileri = Swift_Mailer::newInstance($transport);
+
+$message = Swift_Message::newInstance('Palautetta')
+  ->setFrom(array('$email' => '$name'))
+  ->setTo(array('paivakotionnenmyyra@gmail.com' => 'Onnenmyyra'))
+  ->setBody('$message')
+  ;
+
+// Send the message
+$result = $maileri->send($message);
 }
 
 ?>

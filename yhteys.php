@@ -10,12 +10,12 @@
 					<br><br><br><br>
 					<h1>Yhteystietomme</h1>
 					<br>
-					<h3>P‰iv‰koti Onnenmyyr‰ <br>
+					<h3>P√§iv√§koti Onnenmyyr√§ <br>
 					<p class="bold">Maininkitie 4 C 25
 					<br> 02320 Espoo
 					<br> p. 0400-393 221
 					<br>
-					Yhteytt‰ voit otta myˆs palautelaatikon kautta.<br>
+					Yhteytt√§ voit otta my√∂s palautelaatikon kautta.<br>
 					<br>
 					<br>Olemme auki ma-pe 7.00 - 17.00 </p>
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

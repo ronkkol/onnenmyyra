@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION["user"])) {
 
-	echo ('Kirjaudu sis‰‰n ennen t‰m‰n sivun katselemista!');
+	echo ('Kirjaudu sis√§√§n ennen t√§m√§n sivun katselemista!');
 	header("Location: login.php");
 
 }
@@ -17,20 +17,20 @@ if (!isset($_SESSION["user"])) {
 			<?php include('includes/header.php'); ?>
 			<?php include('includes/sidebar.php'); ?>
 			<div id='content' align='center' class='height'>
-				<h1>Viikko-ohjelman p‰ivitys:</h1>
+				<h1>Viikko-ohjelman p√§ivitys:</h1>
 				<br>
 				<br>
 				<form method='POST' action='checks/ohjelma.php' align='center' style='max-width: 500px;' id='ohjelma'>
 				
-					<label>P‰iv‰ys: <input type='text' class='datepick' style='font-size: 120%;' id="one"  name='date' /></label><br><br><br>
+					<label>P√§iv√§ys: <input type='text' class='datepick' style='font-size: 120%;' id="one"  name='date' /></label><br><br><br>
 					
-					<label>Ohjelma: <textarea id='sis‰ltˆ' name='ohjelma'></textarea></label><br><br><br>
+					<label>Ohjelma: <textarea id='sis√§lt√∂' name='ohjelma'></textarea></label><br><br><br>
 					
-					<input type='submit' value='P‰ivit‰' class='nappi' />                                           <input type='reset' value='Tyhjenn‰' class='nappi' />
+					<input type='submit' value='P√§ivit√§' class='nappi' />                                           <input type='reset' value='Tyhjenn√§' class='nappi' />
 					
 				</form><br><br><a href='logout.php'>Kirjaudu ulos</a><br><br>
 				
-				<h1>Kuukausikirjeen p‰ivitys:</h1>
+				<h1>Kuukausikirjeen p√§ivitys:</h1>
 				<br>
 				<br>
 				
@@ -38,9 +38,9 @@ if (!isset($_SESSION["user"])) {
 				
 					<label>Otsikko: <input type='text' style='font-size: 120%;' id='two' name='title' /></label><br><br><br>
 					
-					<label>Kuukausikirje: <textarea id='sis‰ltˆ' name='kirje'></textarea></label><br><br><br>
+					<label>Kuukausikirje: <textarea id='sis√§lt√∂' name='kirje'></textarea></label><br><br><br>
 					
-					<input type='submit' value='P‰ivit‰' class='nappi' />                                           <input type='reset' value='Tyhjenn‰' class='nappi' />
+					<input type='submit' value='P√§ivit√§' class='nappi' />                                           <input type='reset' value='Tyhjenn√§' class='nappi' />
 					
 				</form><br><br><a href='logout.php'>Kirjaudu ulos</a><br><br>
 			</div><!-- end of content. -->

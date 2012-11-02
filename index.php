@@ -7,7 +7,7 @@
 				<?php include('includes/header.php'); ?>
 				<?php include('includes/sidebar.php'); ?>
 				<div id='content' align='center' class='height'>
-					<h1><br><br><br>Tervetula P‰iv‰koti Onnenmyyr‰n ikiomille nettisivuille!<br>
+					<h1><br><br><br>Tervetula P√§iv√§koti Onnenmyyr√§n ikiomille nettisivuille!<br>
 					<img src='kuvat/logo_iso.png' /><br><br><br><br><br><br><br><br><br><br></h1>
 				</div><!-- end of content. -->
 				
