@@ -3,16 +3,18 @@
 session_start();
 if (!isset($_SESSION["user"])) {
 
-	echo ('Kirjaudu sisään ennen tämän sivun katselemista!');
+	echo ('Kirjaudu sisÃ¤Ã¤n ennen tÃ¤mÃ¤n sivun katselemista!');
 	header("Location: login.php");
 
 }
 
-$connect = mysql_connect('localhost' , 'käyttäjä' , 'salasana');
+include('../includes/config.php');
+mysql_connect($config['db'], $config['user'], $config['passwd'])
+
 
 if (!$connect) {
 
-	die ('Yhteyden muodostus epäonnistui!');
+	die ('Yhteyden muodostus epÃ¤onnistui!');
 	
 }
 else {
@@ -29,7 +31,7 @@ else {
 		
 		if (!$db_selected) {
 		
-			die ("Tietokannan valinta epäonnistui!");
+			die ("Tietokannan valinta epÃ¤onnistui!");
 		
 		}
 		else {
@@ -45,8 +47,7 @@ else {
 		
 		}
 	}
-	else die ('Täytä molemmat kentät!');
+	else die ('TÃ¤ytÃ¤ molemmat kentÃ¤t!');
 
 }
 
-?>

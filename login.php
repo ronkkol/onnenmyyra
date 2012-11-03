@@ -18,14 +18,14 @@ session_regenerate_id(true);
 			$pass = md5($_POST["pass"]);
 			if ($user && $pass) {
 				include('includes/config.php');
-				$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
+				$connect = mysql_connect($config['db'], $config['user'], $config['passwd']);
 				if(!$connect) {
 					die ('Tietokantaan yhdistäminen epäonnistui!');
 				}
 				else {
 					$user = mysql_real_escape_string($user);
 					$pass = mysql_real_escape_string($pass);
-					$db = mysql_select_db("$config['admin-db']" , $connect);
+					$db = mysql_select_db($config['admin-db'], $connect);
 					if (!$db) {
 						die ('Tietokannan valitseminen epäonnistui!');
 					}

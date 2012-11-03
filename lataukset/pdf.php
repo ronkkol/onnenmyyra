@@ -1,4 +1,5 @@
 <?php
+
 $file = 'hakemus.pdf';
 
 if (file_exists($file)) {
@@ -15,5 +16,6 @@ if (file_exists($file)) {
     readfile($file);
     exit;
 }
-header('Location: ../Haku.php');
-?>
+
+header('Location: ../haku.php');
+
