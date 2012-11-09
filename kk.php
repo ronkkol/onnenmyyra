@@ -11,12 +11,12 @@
 					<div id='kk'>
 					<?php
 					include('includes/config.php');
-					$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
+					$connect = mysql_connect($config['db'], $config['user'], $config['passwd']);
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
 							}
 							else {
-								$db_selected = mysql_select_db("$config['kk-db']" , $connect);
+								$db_selected = mysql_select_db($config['kk-db'], $connect);
 								if (!$db_selected) {
 									echo ("Jokin meni vikaan tietokannan löytämisessä!");
 								}
@@ -50,12 +50,12 @@
 						$submit = $_POST["submit"];
 						if ($_POST["date"]) {
 							include('includes/config.php');
-							$connect = mysql_connect("$config['db']" , "$config['user']" , "$config['passwd']");
+							$connect = mysql_connect($config['db'], $config['user'], $config['passwd']);
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
 							}
 							else {
-								$db_selected = mysql_select_db("$config['ohjelma-db']" , $connect);
+								$db_selected = mysql_select_db($config['ohjelma-db'], $connect);
 								if (!$db_selected) {
 									echo ("Jokin meni vikaan tietokannan löytämisessä!");
 								}

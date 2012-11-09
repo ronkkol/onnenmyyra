@@ -18,10 +18,11 @@ $email_address))
 
 if( empty($errors))
 {
-require_once 'lib/swift_required.php';
+require_once 'swiftmailer/lib/swift_required.php';
 
+require_once 'includes/config.php';
 
-$transport = Swift_SmtpTransport::newInstance('ssmtp-serveri', smtp-portti)
+$transport = Swift_SmtpTransport::newInstance($config['smtp-server'])
   ->setUsername('kayttajanimi')
   ->setPassword('salasana')
   ;
@@ -29,13 +30,15 @@ $transport = Swift_SmtpTransport::newInstance('ssmtp-serveri', smtp-portti)
 $maileri = Swift_Mailer::newInstance($transport);
 
 $message = Swift_Message::newInstance('Palautetta')
-  ->setFrom(array('$email' => '$name'))
-  ->setTo(array('paivakotionnenmyyra@gmail.com' => 'Onnenmyyra'))
-  ->setBody('$message')
+  ->setFrom(array($email_address => $name))
+  ->setTo(array($config['feedback-recipient'] => 'Onnenmyyra'))
+  ->setBody($message)
   ;
 
 // Send the message
 $result = $maileri->send($message);
+
+echo("Palaute lähetetty!");
 }
 
-?>
+

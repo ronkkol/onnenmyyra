@@ -8,7 +8,7 @@
 				<?php include('includes/sidebar.php'); ?>
 				<div id='content' align='center' class='height'>
 					<br><br><br><h1>Palauteboxi</h1><br><br>
-					<form method='POST' name='palaute' action='formhandler.php'>
+					<form method='POST' name='palaute' action='formHandler.php'>
 						<label>
 						Nimesi:
 							<input type="text" name="name" class='field' /><br><br>
