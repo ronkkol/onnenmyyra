@@ -11,14 +11,18 @@
 					<div id='kk'>
 					<?php
 					include('includes/config.php');
-					$connect = mysql_connect($config['db'], $config['user'], $config['passwd']);
+					$connect = mysql_connect($config['host'], $config['user'], $config['passwd']);
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
 							}
 							else {
-								$db_selected = mysql_select_db($config['kk-db'], $connect);
+								$db_selected = mysql_select_db($config['db'], $connect);
 								if (!$db_selected) {
-									echo ("Jokin meni vikaan tietokannan löytämisessä!");
+                                    if ($config['debug']) {
+                                        die (mysql_error());
+                                    } else {
+                                        die ("Tietokannan valinta epäonnistui!");
+                                    }
 								}
 								else {
 									$query = mysql_query("Select * FROM content order by id DESC limit 1");
@@ -31,8 +35,11 @@
 										}
 										else {
 											$row = mysql_fetch_array($query);
-											echo ('<h2>' .$row['title']. '</h2>');
-											echo ('<h3>' .$row['kirje']. '</h3>');
+                                            $date = new Datetime($row['updated']);
+
+                                            echo ('<h2>' .$row['title'].'</h2>');
+                                            echo ( "<span class='date'>" .$date->format('d.m.Y H:i'). "</span>");
+											echo ('<p>' .$row['kirje']. '</p>');
 										}
 									}
 								}
@@ -44,35 +51,43 @@
 						<input type='submit' value='Etsi' class='nappi' name='submit' />
 					</form>
 					<br><br>
-					<div id='result' style='border-top: 1px solid gray; border-bottom: 1px solid gray; width: 600px;'>
+					<div id='result' style='border-top: 1px solid gray; width: 600px;'>
 						<?php
 						if (isset($_POST["submit"])) {
 						$submit = $_POST["submit"];
 						if ($_POST["date"]) {
 							include('includes/config.php');
-							$connect = mysql_connect($config['db'], $config['user'], $config['passwd']);
+							$connect = mysql_connect($config['host'], $config['user'], $config['passwd']);
 							if (!$connect) {
 								echo ('Jokin meni vikaan tietokantaan yhdistämisessä!');
 							}
 							else {
-								$db_selected = mysql_select_db($config['ohjelma-db'], $connect);
+								$db_selected = mysql_select_db($config['db'], $connect);
 								if (!$db_selected) {
-									echo ("Jokin meni vikaan tietokannan löytämisessä!");
+                                    if ($config['debug']) {
+                                        die (mysql_error());
+                                    } else {
+                                        die ("Tietokannan valinta epäonnistui!");
+                                    }
 								}
 								else {
 									$date = mysql_real_escape_string($_POST["date"]);
-									$query = mysql_query("SELECT * FROM content WHERE date='$date'");
+									$query = mysql_query("SELECT * FROM content WHERE updated>'$date' order by updated desc");
 									if (!$query) {
 										echo (mysql_error());
 									}
 									else {
 										if (mysql_num_rows($query) < 1) {
-											echo ('Ei tietoja tälle päivälle!');
+											echo ('EI tätäpäivää uudempia tietoja!');
 										}
 										else {
-											$row = mysql_fetch_array($query);
-											echo ('<h2>' .$row['date']. '</h2>');
-											echo ('<h3>' .$row['ohjelma']. '</h3>');
+                                            while($row = mysql_fetch_array($query)){
+                                                $date = new Datetime($row['updated']);
+
+                                                echo ('<h2>' .$row['title'].'</h2>');
+                                                echo ( "<span class='date'>" .$date->format('d.m.Y H:i'). "</span>");
+                                                echo ('<p>' .$row['kirje']. '</p><hr>');
+                                            }
 										}
 									}
 								}
@@ -87,7 +102,12 @@
 			</div><!-- end of cwrap. -->
 			<?php include('includes/footer.php'); ?>
 			<script type='text/javascript'>
-			$("#one").datepicker();
+                $("#one").datepicker({
+                    showWeek: true,
+                    firstDay: 1,
+                    minDate: -30,
+                    dateFormat: 'yy-mm-dd'
+                });
 		</script>
 	</BODY>
 </HTML>
