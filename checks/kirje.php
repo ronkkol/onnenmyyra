@@ -9,13 +9,10 @@ if (!isset($_SESSION["user"])) {
 }
 
 include('../includes/config.php');
-mysql_connect($config['db'], $config['user'], $config['passwd'])
-
+$connect = mysql_connect($config['host'], $config['user'], $config['passwd']);
 
 if (!$connect) {
-
 	die ('Yhteyden muodostus epäonnistui!');
-	
 }
 else {
 
@@ -27,16 +24,17 @@ else {
 		echo ("$title <br><br>");
 		echo ("$kirje <br><br>");
 		
-		$db_selected = mysql_select_db('kk' , $connect);
+		$db_selected = mysql_select_db($config['db'] , $connect);
 		
 		if (!$db_selected) {
-		
-			die ("Tietokannan valinta epäonnistui!");
-		
-		}
+            if ($config['debug']) {
+                die (mysql_error());
+            } else {
+                die ("Tietokannan valinta epäonnistui!");
+            }
+        }
 		else {
-		
-			$query = mysql_query("INSERT INTO content VALUES ('' , '$title' , '$kirje')");
+			$query = mysql_query("INSERT INTO content (title, kirje, updated) VALUES ('".$title."' , '".$kirje."', NOW())");
 			
 			if ($query) {
 			

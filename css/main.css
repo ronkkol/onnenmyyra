@@ -190,3 +190,11 @@ ol {display: inline-block; text-align: left;}
 	border-bottom: 2px solid;
 	font-size: 75%;
 }
+
+span.date {
+    font-size: 14px;
+}
+
+h2 {
+    margin-bottom: 0px;
+}

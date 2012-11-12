@@ -18,31 +18,41 @@ session_regenerate_id(true);
 			$pass = md5($_POST["pass"]);
 			if ($user && $pass) {
 				include('includes/config.php');
-				$connect = mysql_connect($config['db'], $config['user'], $config['passwd']);
+				$connect = mysql_connect($config['host'], $config['user'], $config['passwd']);
 				if(!$connect) {
 					die ('Tietokantaan yhdistäminen epäonnistui!');
 				}
 				else {
+                    $db_selected = mysql_select_db($config['db'] , $connect);
+                    if (!$db_selected) {
+                        if ($config['debug']) {
+                            die (mysql_error());
+                        } else {
+                            die ("Tietokannan valinta epäonnistui!");
+                        }
+                    }
+
 					$user = mysql_real_escape_string($user);
 					$pass = mysql_real_escape_string($pass);
-					$db = mysql_select_db($config['admin-db'], $connect);
-					if (!$db) {
-						die ('Tietokannan valitseminen epäonnistui!');
-					}
-					else {
-						$query = mysql_query("SELECT * FROM kayttajat WHERE kayttaja='$user' AND salasana='$pass'");
-						if ($query) {
-							mysql_fetch_array($query);
-							$numrows = mysql_num_rows($query);
-							if ($numrows > 0) {
-								$_SESSION["user"] = 1;
-								
-								header('Location: yllapito.php');
-							}
-							else echo ('Väärä käyttäjänimi tai salasana!');
-						}
-						else die ('??');
-					}
+                    $query = mysql_query("SELECT * FROM kayttajat WHERE kayttaja='$user' AND salasana='$pass'");
+                    if ($query) {
+                        mysql_fetch_array($query);
+                        $numrows = mysql_num_rows($query);
+                        if ($numrows > 0) {
+                            $_SESSION["user"] = true;
+
+                            header('Location: yllapito.php');
+                        }
+                        else echo ('Väärä käyttäjänimi tai salasana!');
+                    }
+                    else {
+                        if ($config['debug']) {
+                            die ('Invalid query: '.mysql_error());
+                        } else {
+                            die ("Tietokantavirhe!");
+                        }
+                    }
+
 				}
 			}
 			else echo ('Täytä molemmat kentät!');
