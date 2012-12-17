@@ -7,10 +7,13 @@
 				<?php include('includes/header.php'); ?>
 				<?php include('includes/sidebar.php'); ?>
 				<div id='content' align='center' class='height'>
-					<h3 align='left' class='parag'>Onnenmyyrä on 1994 perustettu Espoon Kivenlahdessa sijaitseva pieni päiväkoti. Henkilökuntaamme kuuluu johtaja/lastentarhanopettaja, lastentarhanopettaja sekä kaksi lastenhoitajaa. Usein joukossamme on myös työharjoittelija tai tukityöllistetty apunamme. 
-					Tarjoamme toiminnallista ja yksilöllistä päivähoitoa. 6-vuotiaat saavat esiopetusta pienryhmässä. Haluamme tarjota kodinomaisen kasvuympäristön ja pyrimme tukemaan lapsen omaa persoonallisuutta kaikin mahdollisin tavoin. Kannustamme luovuuteen, itseilmaisuun ja kekseliäisyyteen, mutta tarjoamme samalla turvaa ja tukea niin paljon kuin kukin lapsi sitä tarvitsee. 
-					Onnenmyyrä sijaitsee kerrostalon kivijalassa, tiloissa, jotka on alunperinkin suunniteltu päiväkotikäyttöön. Pihamme on tilava ja tarjoaa mahdollisuuksia niin kallioilla kiipeilyyn kuin hiekkalinnojen rakenteluunkin. Omien tilojen lisäksi retkeilemme paljon lähimaastossa sekä käytämme läheisen Mainingin koulun liikuntasalia jumppatuokioihin. Myös lähiurheilukenttä on aktiivisessa käytössä erityisesti luistelukautena. Ympäristö on meille tärkeä, niinpä lajittelemme kaikki jätteet lastenkin kanssa ja havainnoimme jatkuvasti luontoa. 
-					Päiväkotiamme ylläpitää vanhempainyhdistys, johon kaikki perheet automaattisesti kuuluvat. Yhdistyksen hallitus koostuu lasten vanhemmista ja henkilökunnasta. Kaikki halukkaat vanhemmat ovat tervetulleita mukaan päiväkodin hallituksen toimintaan päättämään päiväkotia koskevista tärkeistä asioista. Hallitukseen valitaan jäsenet kerran vuodessa yhdistyksen syyskokouksessa. </h3>
+					<h3 align='left' class='parag'>
+Päiväkoti Onnenmyyrä on vuodesta 1994 toiminut vanhempainyhdistyksen ylläpitämä päiväkoti. Meillä on 18 hoitopaikkaa 1-5 -vuotiaille lapsille. Päiväkodissamme työskentelee kaksi opettajaa ja kaksi lastenhoitajaa.
+
+Onnenmyyrän tärkeimpänä ajatuksena on tarjota turvallinen ja kodinomainen hoitopaikka. Kodinomaisuuteen kuuluu kaikenikäisten kanssa toimiminen, niinpä meillä kaikki lapset ovat samassa ryhmässä. Näin lapset oppivat toimimaan luontevasti eri ikäisten seurassa, auttavat pienempiään ja toisaalta voivat ottaa mallia isommilta. Pyrimme toiminnassamme lapsilähtöisyyteen, eli olemme aidosti kiinnostuneita lasten tekemisistä ja puheista. Lapsia kuuntelemalla ja seuraamalla saamme suunniteltua toimintamme lasten omista kiinnostuksen kohteista ja tarpeista lähtien. Emme myöskään painota erityisesti mitään tiettyä osa-aluetta toiminnassame, vaan pyrimme monipuoliseen toimintaan ja tarjoamaan lapsille uusia kokemuksia. Haluamme kasvattaa lapsia omatoimisuuteen sekä oman ajattelun, itseluottamuksen ja luovuuden kasvamiseen.
+
+Tervetuloa tutustumaan toimintaamme!
+ </h3>
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 				</div><!-- end of content. -->
 			</div><!-- end of cwrap. -->
