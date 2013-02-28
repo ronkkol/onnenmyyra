@@ -7,8 +7,7 @@
 				<?php include('includes/header.php'); ?>
 				<?php include('includes/sidebar.php'); ?>
 				<div id='content' align='center' class='height'>
-					<h1></h1>
-                    <br />
+                    <br /><br />
                     <img src='kuvat/onnenmyyra-interior.jpg' width='700' height='525' />
 					<p><b>Nämä sivut ovat 13-vuotiaan Leevin kesätyöprojekti</b></p><br><br>
 				</div><!-- end of content. -->
