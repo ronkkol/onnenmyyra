@@ -14,6 +14,7 @@
 					<p class="bold">Maininkitie 4 C 25
 					<br> 02320 Espoo
 					<br> p. 0400-393 221
+					<br> säköposti: onnenmyyra@elisanet.fi
 					<br>
 					Yhteyttä voit otta myös palautelaatikon kautta.<br>
 					<br>
@@ -23,4 +24,4 @@
 			</div><!-- end of cwrap. -->
 			<?php include('includes/footer.php'); ?>
 	</BODY>
-</HTML>
+</HTMl>
